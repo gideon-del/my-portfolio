@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+:root {
+  --max-width: 1100px;
+  --mcrl: 0 auto;
+  --order: 1s;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(221, 205, 205);
+  font-family: "Inconsolata", Impact;
+  font-size: 30px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+p {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: lighter;
+}
+/*Navbar*/
+#navbar {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: var(--mcrl);
+  z-index: 100;
+  background-color: rgb(102, 69, 7);
+}
+ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+ul li {
+  margin: 10px 20px;
+  position: relative;
+}
+ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  background-color: yellow;
+}
+li a {
+  transition: all 1s ease-in-out forward;
+}
+li a:hover {
+  border-bottom: 2px yellow solid;
+}
+/*Welcome section*/
+#welcome-section {
+  height: 100vh;
+  color: rgba(32, 28, 28, 0.849);
+  background: rgb(61, 61, 117);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#welcome-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.order0 {
+  animation-name: appear;
+  animation-duration: 6s;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.container {
+  display: inline-block;
+  width: max-content;
+}
+.order1 {
+  overflow: hidden;
+  border: none;
+  border-right: orange 2px solid;
+  width: 0;
+  display: inline-block;
+  height: 20px;
+  animation: type-writer 2s steps(30, end) 2s forwards, blinking 0.5s infinite;
+  padding: 0;
+}
+.order2 {
+  overflow: hidden;
+  border: none;
+  border-right: orange 2px solid;
+  width: 0;
+  display: inline-block;
+  height: 20px;
+  animation: type-writer 2s steps(20, end) 3s forwards, blinking 0.5s infinite;
+  padding: 0;
+}
+@keyframes blinking {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: orange;
+  }
+}
+@keyframes type-writer {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.containers {
+  margin: 0;
+  padding: 0 80px;
+  height: 100vh;
+  width: 100%;
+  max-width: var(--max-width);
+  max-width: 1100px;
+  margin: var(--mcrl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  text-transform: capitalize;
+}
+/*Project*/
+#projects {
+  padding-top: 100px;
+  height: auto;
+  background-color: rgb(11, 99, 87);
+}
+.project-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: var(--mcrl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.project-title {
+  font-family: "PT Sans Narrow", sans-serif;
+  text-decoration: underline;
+  text-align: center;
+  margin: 20 0;
+  z-index: 2;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 30%);
+  gap: 50px;
+  grid-template-rows: repeat(2, 50%);
+  justify-content: center;
+  align-items: center;
+}
+.project-container {
+  margin: 20px auto;
+
+  padding: 100px 0;
+}
+.project-tile {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  text-align: center;
+  padding: 0 auto;
+  white-space: nowrap;
+  background-color: rgb(18, 7, 39);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-tile img {
+  display: block;
+  width: 100%;
+  padding: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}
+.project-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 15, 15, 0.658);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.project-text:hover {
+  opacity: 1;
+}
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+}
